@@ -648,6 +648,18 @@ struct PyWindow {
     return py::make_tuple(x, y);
   }
 
+  void show_cursor() {
+    window->show_cursor();
+  }
+
+  void hide_cursor() {
+    window->hide_cursor();
+  }
+
+  void lock_cursor() {
+    window->lock_cursor();
+  }
+
   void destroy() {
     if (window) {
       window.reset();
@@ -671,7 +683,9 @@ void export_ggui(py::module &m) {
       .def("get_image_buffer_as_numpy", &PyWindow::get_image_buffer)
       .def("is_pressed", &PyWindow::is_pressed)
       .def("get_cursor_pos", &PyWindow::py_get_cursor_pos)
-      .def("is_running", &PyWindow::is_running)
+      .def("show_cursor", &PyWindow::show_cursor)
+      .def("hide_cursor", &PyWindow::hide_cursor)
+      .def("lock_cursor", &PyWindow::lock_cursor)
       .def("set_is_running", &PyWindow::set_is_running)
       .def("get_event", &PyWindow::get_event)
       .def("get_events", &PyWindow::get_events)

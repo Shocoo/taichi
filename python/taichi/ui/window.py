@@ -137,6 +137,18 @@ class Window:
     def get_cursor_pos(self):
         """Get current cursor position, in the range `[0, 1] x [0, 1]`."""
         return self.window.get_cursor_pos()
+    
+    def show_cursor(self):
+        """Shows the cursor"""
+        return self.window.lock_cursor()
+
+    def hide_cursor(self):
+        """Hides the cursor"""
+        return self.window.lock_cursor()
+
+    def lock_cursor(self):
+        """Hides and grabs the cursor"""
+        return self.window.lock_cursor()
 
     def show(self):
         """Display this window."""

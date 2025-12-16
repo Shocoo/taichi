@@ -110,6 +110,18 @@ std::pair<float, float> WindowBase::get_cursor_pos() {
   return std::make_pair(x, y);
 }
 
+void WindowBase::show_cursor() {
+  glfwSetInputMode(glfw_window_, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+}
+
+void WindowBase::hide_cursor() {
+  glfwSetInputMode(glfw_window_, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+}
+
+void WindowBase::lock_cursor() {
+  glfwSetInputMode(glfw_window_, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+}
+
 std::vector<Event> WindowBase::get_events(EventType tag) {
   CHECK_WINDOW_SHOWING;
   glfwPollEvents();

@@ -30,6 +30,12 @@ class WindowBase {
 
   std::pair<float, float> get_cursor_pos();
 
+  void show_cursor();
+
+  void hide_cursor();
+  
+  void lock_cursor();
+
   std::vector<Event> get_events(EventType tag);
 
   bool get_event(EventType tag);
