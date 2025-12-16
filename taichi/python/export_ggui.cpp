@@ -686,6 +686,7 @@ void export_ggui(py::module &m) {
       .def("show_cursor", &PyWindow::show_cursor)
       .def("hide_cursor", &PyWindow::hide_cursor)
       .def("lock_cursor", &PyWindow::lock_cursor)
+      .def("is_running", &PyWindow::is_running)
       .def("set_is_running", &PyWindow::set_is_running)
       .def("get_event", &PyWindow::get_event)
       .def("get_events", &PyWindow::get_events)
